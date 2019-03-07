@@ -79,7 +79,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/hardened/nginx:v1
+        image: gcpdevacr.azurecr.io/cep/nginx/nginx-1.15.8-bionic:v1
         ports:
         - containerPort: 443
         volumeMounts:

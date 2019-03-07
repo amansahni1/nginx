@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-proxy-backend
-  namespace: cep-ui-pt
+  namespace: cep-ui-pt1
   labels:
     app: nginx-proxy
   annotations:
@@ -22,7 +22,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-proxy-config
-  namespace: cep-ui-pt
+  namespace: cep-ui-pt1
   labels:
     app: nginx-proxy
 data:
@@ -62,7 +62,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-cep-ui-pt-proxy
-  namespace: cep-ui-pt
+  namespace: cep-ui-pt1
   labels:
     app: nginx-proxy
 spec:
@@ -77,7 +77,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/hardened/nginx:v1
+        image: gcpdevacr.azurecr.io/cep/nginx/nginx-1.15.8-bionic:v1
         ports:
         - containerPort: 443
         volumeMounts:
