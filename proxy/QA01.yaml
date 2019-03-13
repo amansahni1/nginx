@@ -13,7 +13,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 443
-    targetPort: 443
+    targetPort: 8080
 status:
   loadBalancer: {}
 ---
@@ -47,8 +47,7 @@ data:
       server accreditation.datacash.com:443;
     }
         server {
-        listen 443;
-        ssl on;
+        listen 8080 ssl;
         ssl_certificate /tmp/gcp.boots.com;
         ssl_certificate_key /tmp/gcp.boots.com.key;
         server_name dhpqa01proxy.gcp.boots.com;
@@ -81,7 +80,7 @@ spec:
       - name: nginx
         image: gcpdevacr.azurecr.io/cep/nginx/nginx-1.15.8-bionic:v1
         ports:
-        - containerPort: 443
+        - containerPort: 8080
         volumeMounts:
         - name: config
           mountPath: /etc/nginx
@@ -89,7 +88,7 @@ spec:
       volumes:
       - name: config
         configMap:
-          defaultMode: 0600
+          defaultMode: 0644
           name: nginx-proxy-config
       imagePullSecrets:
       - name: gcpdev01aksacr
