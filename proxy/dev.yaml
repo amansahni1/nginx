@@ -89,7 +89,7 @@ spec:
       volumes:
       - name: config
         configMap:
-          defaultMode: 0600
+          defaultMode: 0644
           name: nginx-proxy-config
       imagePullSecrets:
       - name: gcpdev01aksacr
