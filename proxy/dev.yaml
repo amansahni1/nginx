@@ -27,7 +27,6 @@ metadata:
     app: nginx-proxy
 data:
    nginx.conf: |
-    user  dhpappuser;
     worker_processes  1;
     error_log  /var/log/nginx/error.log warn;
     pid        /var/run/nginx.pid;
@@ -47,7 +46,7 @@ data:
       server accreditation.datacash.com:443;
     }
         server {
-        listen 443;
+        listen 8080 ssl;
         ssl on;
         ssl_certificate /tmp/gcp.boots.com;
         ssl_certificate_key /tmp/gcp.boots.com.key;
