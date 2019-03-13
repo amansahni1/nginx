@@ -47,7 +47,6 @@ data:
     }
         server {
         listen 8080 ssl;
-        ssl on;
         ssl_certificate /tmp/gcp.boots.com;
         ssl_certificate_key /tmp/gcp.boots.com.key;
         server_name dhpdev01proxy.gcp.boots.com;
