@@ -77,7 +77,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/gcp/nginx:v4
+        image: gcpdevacr.azurecr.io/gcp/nginx:v7
         ports:
         - containerPort: 8080
         volumeMounts:
