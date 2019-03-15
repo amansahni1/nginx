@@ -1,0 +1,103 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/pharmacy
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-e2e-int-ingress
+  namespace: cep-ui-e2e
+spec:
+  tls:
+  - hosts:
+    - dhpqa02.gcp.boots.com
+    secretName: dhpqa02.gcp.boots.com
+  rules:
+  - host: dhpqa02.gcp.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootsndcpui
+          servicePort: 3000
+        path: /online/pharmacy
+ #     - backend:
+ #         serviceName: bootsndcpui
+ #         servicePort: 3000
+ #       path: /online/api/
+ #     - backend:
+ #         serviceName: bootsndcpui
+ #         servicePort: 3000
+ #       path: /online/redis/
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/pharmacy
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-e2e-ext-ingress
+  namespace: cep-ui-e2e
+spec:
+  tls:
+  - hosts:
+    - www.test4.boots.com
+    secretName: www.test4.boots.com
+  rules:
+  - host: www.test4.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootsndcpui
+          servicePort: 3000
+        path: /online/pharmacy
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/colleague
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-e2e-colleague-ingress
+  namespace: cep-ui-e2e
+spec:
+  tls:
+  - hosts:
+    - dhpqa02.gcp.boots.com
+    secretName: dhpqa02.gcp.boots.com
+  rules:
+  - host: dhpqa02.gcp.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootscolleaguesui
+          servicePort: 3000
+        path: /online/colleague
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/colleague
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-e2e-ext-colleague-ingress
+  namespace: cep-ui-e2e
+spec:
+  tls:
+  - hosts:
+    - www.test4.boots.com
+    secretName: www.test4.boots.com
+  rules:
+  - host: www.test4.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootscolleaguesui
+          servicePort: 3000
+        path: /online/colleague

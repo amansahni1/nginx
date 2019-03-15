@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/pharmacy
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/forece-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+   nginx.ingress.kubernetes.io/use-regex: "true"
+  name: bootsndcpui-app-ingress
+  namespace: cep-ui-pt
+spec:
+  tls:
+  - hosts:
+    - dhppt.gcp.boots.com
+    secretName: dhppt.gcp.boots.com
+  rules:
+  - host: dhppt.gcp.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootsndcpui
+          servicePort: 3000
+        path: /online/pharmacy
+#      - backend:
+#          serviceName: bootsndcpui
+#          servicePort: 3000
+#        path: /online/pharmacy/(.*)
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/pharmacy
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/forece-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-boots-ingress
+  namespace: cep-ui-pt
+spec:
+  tls:
+  - hosts:
+    - www.pt.boots.com
+    secretName: www.pt.boots.com
+  rules:
+  - host: www.pt.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootsndcpui
+          servicePort: 3000
+        path: /online/pharmacy
