@@ -1,0 +1,4 @@
+@Library("Devops_DHP_Templates") _
+nginxToolsProxy {
+	scmurl = "ssh://git@10.120.130.9:7922/gcpdev/devops-jenkins-template.git"
+}
