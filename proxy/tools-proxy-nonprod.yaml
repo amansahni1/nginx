@@ -59,7 +59,6 @@ data:
         listen 8080 ssl;
         ssl_certificate /tmp/gcp.boots.com;
         ssl_certificate_key /tmp/gcp.boots.com.key;
-        server_name gcpkibana.tools.boots.com;
         location /  {
         proxy_pass http://kibana;
         proxy_http_version 1.1;
