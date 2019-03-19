@@ -44,43 +44,71 @@ data:
     worker_connections  1024;
     }
     http {
-    default_type  application/octet-stream;
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
-    access_log  /var/log/nginx/access.log  main;
-    sendfile  on;
-    keepalive_timeout 65;
-    include /etc/nginx/conf.d/*.conf;
-    upstream kibana {
-      server kibana.cep-monitoring-nonprod.svc.cluster.local:443;
-    }
-    upstream jenkins {
-      server jenkins.jenkins.svc.cluster.local:8080;
-    }
+        default_type  application/octet-stream;
+        log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                          '$status $body_bytes_sent "$http_referer" '
+                          '"$http_user_agent" "$http_x_forwarded_for"';
+        access_log  /var/log/nginx/access.log  main;
+        sendfile  on;
+        keepalive_timeout 65;
+        include /etc/nginx/conf.d/*.conf;
+        upstream kibana {
+          server kibana.cep-monitoring-nonprod.svc.cluster.local:443;
+        }
+        upstream jenkins {
+          server jenkins.jenkins.svc.cluster.local:8080;
+        }
+        upstream spinnaker {
+          server spin-deck.spinnaker.svc.cluster.local:9000;
+        }
+        upstream grafana {
+          server prometheus-grafana.cep-monitoring-nonprod.svc.cluster.local:80;
+        }
         server {
-        listen 8443 ssl;
-        ssl_certificate /tmp/tools.boots.com;
-        ssl_certificate_key /tmp/tools.boots.com.key;
-        server_name npkibana.tools.boots.com;
-        access_log /var/log/nginx/kibana.log main;
-        location /  {
-        proxy_pass https://kibana;
-        proxy_http_version 1.1;
-       }
-       }
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npkibana.tools.boots.com;
+            access_log /var/log/nginx/kibana.log main;
+            location /  {
+            proxy_pass https://kibana;
+            proxy_http_version 1.1;
+           }
+        }
         server {
-        listen 8443 ssl;
-        ssl_certificate /tmp/tools.boots.com;
-        ssl_certificate_key /tmp/tools.boots.com.key;
-        server_name npjenkins.tools.boots.com;
-        access_log /var/log/nginx/jenkins.log main;
-        location /  {
-        proxy_pass http://jenkins;
-        proxy_http_version 1.1;
-       }
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npjenkins.tools.boots.com;
+            access_log /var/log/nginx/jenkins.log main;
+            location /  {
+            proxy_pass http://jenkins;
+            proxy_http_version 1.1;
+           }
+        }
+        server {
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npspinnaker.tools.boots.com;
+            access_log /var/log/nginx/spinnaker.log main;
+            location /  {
+            proxy_pass http://spinnaker;
+            proxy_http_version 1.1;
+           }
+        }
+        server {
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npgrafana.tools.boots.com;
+            access_log /var/log/nginx/grafana.log main;
+            location /  {
+            proxy_pass http://grafana;
+            proxy_http_version 1.1;
+           }
+        }
      }
-      }
 ---
 apiVersion: apps/v1
 kind: Deployment
