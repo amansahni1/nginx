@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/pharmacy
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/forece-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-app-ingress
+  namespace: bootsndcpui
+spec:
+  tls:
+  - hosts:
+    - dhpdev01.gcp.boots.com
+    secretName: dhpdev01.gcp.boots.com
+  rules:
+  - host: dhpdev01.gcp.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootsndcpui
+          servicePort: 3000
+        path: /online/pharmacy

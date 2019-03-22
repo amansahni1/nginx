@@ -1,0 +1,150 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: nginx-tools-proxy-secrets
+  namespace: cep-services-npdevops
+type: Opaque
+data:
+  tools.boots.com.key:     LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKSndJQkFBS0NBZ0VBMDVYdlU5SE5kYmorUTF6NXFPUDhFc21GUHZqeUk4RERPaDJaZW1DNVk2eEtUSjZ1CnVXYytseHk1RjV0OWNRalBSdzlDRlVFWG9yTjFZWWthV3N3bERVSEcwWEQwTExTMG9ETStkRTJBdWs5TGFxK1YKTjhYaXAxeGg1anlWV1lRR09vOFJNTWpHb3IzREp2QVZsTDk2eUp2anVlYUw0aUR0RmIxQkVvL3pzeUJlcml1ZwpoZWV4M0FwRVdjTzJIK3JoT0RVK3hKR3dtb1FZMjlxWStqTEIyaXZ3WG5pS1FhQnV2QmRJcUxyUm5SQUZjYVIxCmNVS0FnMDF2YVQ3K3hrTEp6TWdlbTFXZHBqUWJNVnBDSE91T2wxNTk2UitnM2cxM3NWc2kxNjlPQVNUQ3ROTDAKNXYwWVBYUXZ3cUJzZ1hYQzRDN2w0V3puUHRNWXh4NHZVdGhKZUsrbFVjQ3o1aWYzeTd3Tm14MXFPcWlUQzRoQQpCTFcvcWRNeWZOajloQ3dHVmhXVzVkbXBWN0xZeW1hdHRIY1I0eUJ5MnlPQko4TVFsdW45NkRKQ0tza1JRZy9YCmhsK1RkK01IMmZpdkdoOGUrcGJXaG5KNXJSY0d1TUV6NDk3cWRnSmp6d3VRcUhxOE1Eb3dvcDF0bGxSeGRYS24KTEVmbmRxVmtCaTdUV1Q5TExQWjVHTHEzUms3UGF1Qm9xa0tHZ3JLajVCdUEwVEVuZ1AzZHVpaklsYkJvNmc2YgppdXBnRGwzTGxvZEd3ZGdyelkyQWxDTUJlekpISTBUM0NzRXBlTDFMdWd3REJ3ODVpZzhpUE1nd2lMZGR4SUtiCm9JTUhadkUzS0pDaHFQeWhSM21KK1hFM1BVb0Y4bkM0bS9GYmFGbVFZNlBDN2REa0loVk9mRndtRHEwQ0F3RUEKQVFLQ0FnQTRCVkxBbHFRWHIwdGkrcEwvckoxcFBBSVRra1pLUVJkdm83YW5PRVRkcHhobEFQNnlDQ3dDUnBDYgpONGdYRFlZVUFtNDB3bTlIbk14UGJzV1RsTW1hb1BmTExHVDZFVDVoekMrVkM1QXh4QnpydW1GL3l0MGdBczNJCjcvRjdLZ0djTDVVVm5aTTZNNVFnRXlFanFTOFJQblVsRzIyZUNhbThQOGVpNm9wVHV4WldkeWFoVFo5QjYxWDkKamx3Q1IyWXFRNjdDelBBOWVRdzc2YnpuUWRraHN0Q0pzdENvWDVueUl4Z1IxS1Q3T09xNEZCc2tTYjlOQkl1agpDaExhMjRRaXZEbWVWeVRPaEsxT2U5OVZXT2tBR3Z5clpMeHJEcFhLVjU3NkRHaFMxVERZUDZLb0pncnMrbjVLCndiNzQ1LzBZN2xIZlJiNVVYQUFMZUdwL1BOVDJxNUE1WFg1b0h6VDY0M3JBNGErZWFMZ2VtNXpJZjlLd0tPNlQKWllxcTZRMG1iUGdkOENwL2VDSzRNUk9UR3JoejZ1SEx4eGd2QVZ0WXcyaWFySmsra1dZTmJXRTQvN2wvOUxBMgptYTJBdFk5dDJRZkFNWHJudGdMZVY2SFo5V0FwUCtkY2luS1ZwNzVUWmhqQllNalJKQitXZHFSMnhGVm1wUCtCCmV1TjZCMzl5eERpOFVjUUNCMVNWQWRqWXVKSWU4MmVLcHpFRkd1TlUrcDk4azlSdjh1dFpXUVZ3S3h6WlNGakIKTWJ3R1dsQ09lN1hYK21mRG16djNKWWVHSFdJQTBkYTM2UjMwQWRqb0hZbkFaVzZKb1RxWFg0NkZpaVRFQkRzaApxdlpJcFZLYTA1YWtFR0xrMnhZanBBa0w2Q21FWFlkbktiWDJTUTJzbVVUcXZDL0U0UUtDQVFFQS9sWk1oNGxpCkhDenpqaGczT0l6UThvaTdPZUYzNUliTmpwVkJkcDJ1eXVrQk5mOE5LemFKa3VBQmNSWjI1ZG1HUFI2NW4vNHQKMlpHQUFTeEs5TFYwUGFJRW1rYnZPVG9xK3NZQnZUdENTSmZDcVNHTjlDUnB4SXdHSTMzUnVIZnlWRnZPODRYaAoxNXNiTS96L2tsejdSQktDTzVUQ0E0MUprTDJDQTRPRjErbGVwbWdleDIxb21iR003Y0w5SllnaU40SUJhZitvCkV5ZU1SUEQ1ejQvUHFXU09HaHJYZG9iRW9EMU1Cd3RVYy83VHUvNWR2UG9MZktvb3Q0NUZ1enplZlkyQkZPNXEKV3RXek9KT3lBbmlHTlZORVVhcUdZYkNWdmlRUmlMVDVlTU40VE5PWjRobFhYZHRNV1NyQUdrSm1CL2k2WjkwMApMaUJWSDAxUVZNZEd5d0tDQVFFQTFQZ1VlNEFlMEhlNUE0RHpsY2VUbXdpcjF2NkluazQ1T0QxeXk4MEFaM3kwCmNaMGRYbXQrTHBNb3ZiVmt4dnpsdi9SUUh3TXVhVWppU2JMV2FCbDQ1VTJBY3FKUmdBTWxSdW1ERzJnZmpaWHIKNlp5RlpqVzdkYnN4c2FlbDdscDFDeVUwbHREU3duY3gvbG5FYkF6cklaZVFraVU0Tmo3ZU5CS210emZwYmxMbQpzSzIxT00wc2dBWnZCcUFYVVFCajhMV1F6Uy9HM0gwUTlmOHM0bHFYYXBVN3ExZ1ZEWElSWFhPMlZ6TXFCY1UzCjlKM2s5TmhmZnRyb1dxMW9UTDBRZElJQXlXK0kvME8wL01VWjFUSXVhdGh5MG8wdEgycXNQaEJKejRJc0dSOVAKMmJmTGN5anFVYjVScTdvQWFTS0FueFNWQ1BQRk40bkVIK0czd1pSWlp3S0NBUUVBN0h3L3NuTEtsOW93S0hwWgp0aW94Q3FLYU84cHFtVUhDbGdZd0ZXT3VxQnNaTmlUT0VOVW4vRHB1L01EZmt2NjhjODVDMlFJVmpjeGRVam5tCkJEMUlOUnFWM3dGLzVCMHk0M1FESC9tZXV6THBIQ3dIK3U5MHJQMXBvOHlVbVVwbU40d2FGSkx6R0crdlRwcTYKNUZPeWltd1BUZWtXc1FqSlUxenlLK1E2S2pWaS9hV29vTlFaUTNjMHk4clhhUE40cFZZcmpHemIwZHVlOEdlRQpVRHV1NGhtT2k3VlRqSERwR1BtRjNMTHJOdVBGNm5Jc3BNOTJxTmJxL3ltNXFzeUJNQXJIOERkekNyelRaUkxuCm5LYUdXOFR0ckdXN2g5QVNtL2FibXhwek1KZklIdDlOb1U3Z3puTmZQVFdqNDRiRHFqdmF6MEorQnptbkRIRHQKOWJaSkd3S0NBUUVBajdoWEFqMGxEbVF0SEJzeXh2cG5Oekd6M2FQcUNJTWJoRU9icThOTnFZanpzTlJwbEdXUQpRdGdXbjJmQmViUURTL1lROTh6S3preGNRWVlKd1RpbmFIOVQxb2lKM1l6QjVFZ0RyVVFvUHdGVXNsTnBodDl1CkFYWnhnOFZ5YWhicmM3a0k4MW83VVBibGF4T2pSWk8yUGZZdG55SzArNDZUbjZxU2pZU1M2RnZUeUptQmViS2sKZkVWYk9hcGg4YzBFcE5XeXdYV2ppdnB2cnNNa3hDQ0VuRzNYVmJ0Y2diVmYyS1FWQW1YSnp4a1h1T0d4T0Rhbwp3MC94aS9nSU1mbEpHSWIvQnZGWkQ0TGVxZEpOcTUxd3k3UUVVT2pxOFkrb2F6M013ZGZEOExRN3k5NkgwdEJpCnlRVlowanowdC82THRFOU1nRDBaODIvcVJlV3FmMTJnc3dLQi8xb01QWFJvM1pLUVBza0wwR3JwWUF4NDJtdjMKTlhFRWY4bXRjenhxeXpKOXdLMVE4U1pMbS9jZG40WlRkbVlzV3l2OWVZVTk4eTJRaTl5OEFLMjlDMG05T3NvbQpjNUluVi9lZVZXcTJYR1JvNUxWSXhqQ0w4VWRQa2FNR2x2UmhJbExTcjlMZFovVTVCTWgzZDkyMjNoRm96bWpCCi9xQk5aY3dVTGJUU2pQR0ZaNy9XQ2NtUnNha0JKblhRMTBIMjRYalVyV2o1UHF4NFo1NXZxSEtZQW9ZT0xGeG4KVTVENEJUU3NTWG5XMmp4QVJZME1wbXZrRHEzaHBVQlFienl6bVhxZXdabkVSNVJhaGtTNDdpQWRNSEtJTU1pRQpVdjlDd3dacVAyZUZqK2VRNStXSzg3c0NWWlZqM0JVblM4L2tjK3dKOXJaNVRRWHpSTUFxMTc2WVlBPT0KLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0=
+  tools.boots.com:     LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUdBVENDQk9tZ0F3SUJBZ0lRQko0MVRDcThUUHFrdDhPVnJ6V2NjekFOQmdrcWhraUc5dzBCQVFzRkFEQmUKTVFzd0NRWURWUVFHRXdKVlV6RVZNQk1HQTFVRUNoTU1SR2xuYVVObGNuUWdTVzVqTVJrd0Z3WURWUVFMRXhCMwpkM2N1WkdsbmFXTmxjblF1WTI5dE1SMHdHd1lEVlFRREV4UkhaVzlVY25WemRDQlNVMEVnUTBFZ01qQXhPREFlCkZ3MHhOekV5TWpBd01EQXdNREJhRncweE9URXlNakF4TWpBd01EQmFNSFl4Q3pBSkJnTlZCQVlUQWtkQ01STXcKRVFZRFZRUUhFd3BPYjNSMGFXNW5hR0Z0TVI0d0hBWURWUVFLRXhWVWFHVWdRbTl2ZEhNZ1EyOXRjR0Z1ZVNCUQpiR014RmpBVUJnTlZCQXNURFVsVUlFUmxjR0Z5ZEcxbGJuUXhHakFZQmdOVkJBTU1FU291ZEc5dmJITXVZbTl2CmRITXVZMjl0TUlJQ0lqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FnOEFNSUlDQ2dLQ0FnRUEwNVh2VTlITmRiaisKUTF6NXFPUDhFc21GUHZqeUk4RERPaDJaZW1DNVk2eEtUSjZ1dVdjK2x4eTVGNXQ5Y1FqUFJ3OUNGVUVYb3JOMQpZWWthV3N3bERVSEcwWEQwTExTMG9ETStkRTJBdWs5TGFxK1ZOOFhpcDF4aDVqeVZXWVFHT284Uk1NakdvcjNECkp2QVZsTDk2eUp2anVlYUw0aUR0RmIxQkVvL3pzeUJlcml1Z2hlZXgzQXBFV2NPMkgrcmhPRFUreEpHd21vUVkKMjlxWStqTEIyaXZ3WG5pS1FhQnV2QmRJcUxyUm5SQUZjYVIxY1VLQWcwMXZhVDcreGtMSnpNZ2VtMVdkcGpRYgpNVnBDSE91T2wxNTk2UitnM2cxM3NWc2kxNjlPQVNUQ3ROTDA1djBZUFhRdndxQnNnWFhDNEM3bDRXem5QdE1ZCnh4NHZVdGhKZUsrbFVjQ3o1aWYzeTd3Tm14MXFPcWlUQzRoQUJMVy9xZE15Zk5qOWhDd0dWaFdXNWRtcFY3TFkKeW1hdHRIY1I0eUJ5MnlPQko4TVFsdW45NkRKQ0tza1JRZy9YaGwrVGQrTUgyZml2R2g4ZStwYldobko1clJjRwp1TUV6NDk3cWRnSmp6d3VRcUhxOE1Eb3dvcDF0bGxSeGRYS25MRWZuZHFWa0JpN1RXVDlMTFBaNUdMcTNSazdQCmF1Qm9xa0tHZ3JLajVCdUEwVEVuZ1AzZHVpaklsYkJvNmc2Yml1cGdEbDNMbG9kR3dkZ3J6WTJBbENNQmV6SkgKSTBUM0NzRXBlTDFMdWd3REJ3ODVpZzhpUE1nd2lMZGR4SUtib0lNSFp2RTNLSkNocVB5aFIzbUorWEUzUFVvRgo4bkM0bS9GYmFGbVFZNlBDN2REa0loVk9mRndtRHEwQ0F3RUFBYU9DQWFFd2dnR2RNQjhHQTFVZEl3UVlNQmFBCkZKQlkvN0NjZGFoUlZIZXg3ZktqUXhZNG5tekZNQjBHQTFVZERnUVdCQlQyZzh2Y00vTjhDbFd5dlVjZisyNGMKVGt3bkFEQWNCZ05WSFJFRUZUQVRnaEVxTG5SdmIyeHpMbUp2YjNSekxtTnZiVEFPQmdOVkhROEJBZjhFQkFNQwpCYUF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01ENEdBMVVkSHdRM01EVXdNNkF4Cm9DK0dMV2gwZEhBNkx5OWpaSEF1WjJWdmRISjFjM1F1WTI5dEwwZGxiMVJ5ZFhOMFVsTkJRMEV5TURFNExtTnkKYkRCTUJnTlZIU0FFUlRCRE1EY0dDV0NHU0FHRy9Xd0JBVEFxTUNnR0NDc0dBUVVGQndJQkZoeG9kSFJ3Y3pvdgpMM2QzZHk1a2FXZHBZMlZ5ZEM1amIyMHZRMUJUTUFnR0JtZUJEQUVDQWpCMUJnZ3JCZ0VGQlFjQkFRUnBNR2N3CkpnWUlLd1lCQlFVSE1BR0dHbWgwZEhBNkx5OXpkR0YwZFhNdVoyVnZkSEoxYzNRdVkyOXRNRDBHQ0NzR0FRVUYKQnpBQ2hqRm9kSFJ3T2k4dlkyRmpaWEowY3k1blpXOTBjblZ6ZEM1amIyMHZSMlZ2VkhKMWMzUlNVMEZEUVRJdwpNVGd1WTNKME1Ba0dBMVVkRXdRQ01BQXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQSs2elBsby9RdnF2dDJTCnpFb3M2Y3lYeE12eGVSRDNmcmFBQThkWnJ3SGxoSnM0THc1dkxWbmFIc2xLTVkyODhPNnJTS2lMaDlIQTJCUFMKZDdBMEhUUThnOFQvaHBvZ2RWYUZSS20yK0t4eThIbVJXeThEaE9iQjZMYUo3Ty9xZjZ4ZVNPcHdMQlRGSi9RSgpMZnBvdjVQN2RZVFNIaHJFK2JkNXpyUnF1eEV0UkRMNkYvZlQrZXpjQy8rRkF3Y1JTd01pVmwrYk5xYkhXU3lzCmNVTnlRVjNqZHhrbjJqV3o0dDJra3N5QUoyWEkrd0M1RUJwcy92N3pjMWtrLzc5eGtXZXFNYXlvTnFMcDBrTFUKdVlpYi92bXJSZkRHL2dSd2k5bzcyRUI0bnJiRlRxMm9hVFdCMm4zcDhTTDI2TmM2MFJ5K1FlazNnSkNESEpwZgpkQUp3MlJNPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-tools-proxy-svc
+  namespace: cep-services-npdevops
+  labels:
+    app: nginx-tools-proxy
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  selector:
+    app: nginx-tools-proxy
+  type: LoadBalancer
+  ports:
+  - port: 443
+    targetPort: 8443
+status:
+  loadBalancer: {}
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-tools-proxy-config
+  namespace: cep-services-npdevops
+  labels:
+    app: nginx-tools-proxy
+data:
+   nginx.conf: |
+    worker_processes  1;
+    error_log  /var/log/nginx/error.log warn;
+    pid        /var/run/nginx.pid;
+    events {
+    worker_connections  1024;
+    }
+    http {
+        default_type  application/octet-stream;
+        log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                          '$status $body_bytes_sent "$http_referer" '
+                          '"$http_user_agent" "$http_x_forwarded_for"';
+        access_log  /var/log/nginx/access.log  main;
+        sendfile  on;
+        keepalive_timeout 65;
+        include /etc/nginx/conf.d/*.conf;
+        upstream kibana {
+          server kibana.cep-monitoring-nonprod.svc.cluster.local:443;
+        }
+        upstream jenkins {
+          server jenkins.jenkins.svc.cluster.local:8080;
+        }
+        upstream spinnaker {
+          server spin-deck.spinnaker.svc.cluster.local:9000;
+        }
+        upstream grafana {
+          server prometheus-grafana.cep-monitoring-nonprod.svc.cluster.local:80;
+        }
+        server {
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npkibana.tools.boots.com;
+            access_log /var/log/nginx/kibana.log main;
+            location /  {
+            proxy_pass https://kibana;
+            proxy_http_version 1.1;
+           }
+        }
+        server {
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npjenkins.tools.boots.com;
+            access_log /var/log/nginx/jenkins.log main;
+            location /  {
+            proxy_pass http://jenkins;
+            proxy_http_version 1.1;
+           }
+        }
+        server {
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npspinnaker.tools.boots.com;
+            access_log /var/log/nginx/spinnaker.log main;
+            location /  {
+            proxy_pass http://spinnaker;
+            proxy_http_version 1.1;
+           }
+        }
+        server {
+            listen 8443 ssl;
+            ssl_certificate /tmp/tools.boots.com;
+            ssl_certificate_key /tmp/tools.boots.com.key;
+            server_name npgrafana.tools.boots.com;
+            access_log /var/log/nginx/grafana.log main;
+            location /  {
+            proxy_pass http://grafana;
+            proxy_http_version 1.1;
+           }
+        }
+     }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-tools-proxy
+  namespace: cep-services-npdevops
+  labels:
+    app: nginx-tools-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-tools-proxy
+  template:
+    metadata:
+      labels:
+        app: nginx-tools-proxy
+    spec:
+      containers:
+      - name: nginx
+        image: gcpdevacr.azurecr.io/gcp/nginx:v7
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config
+          mountPath: /etc/nginx
+          readOnly: true
+        - name: certificates-key
+          mountPath: /tmp
+      volumes:
+      - name: config
+        configMap:
+          defaultMode: 0644
+          name: nginx-tools-proxy-config
+      - name: certificates-key
+        secret:
+          secretName: nginx-tools-proxy-secrets
+      imagePullSecrets:
+      - name: gcpdev01aksacr

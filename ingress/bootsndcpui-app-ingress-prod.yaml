@@ -1,0 +1,79 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/pharmacy/
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-prod-int-ingress
+  namespace: cep-ui
+spec:
+  tls:
+  - hosts:
+    - epharmacy.gcp.boots.com
+    secretName: epharmacy.gcp.boots.com
+  rules:
+  - host: epharmacy.gcp.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootsndcpui
+          servicePort: 3000
+        path: /online/pharmacy
+ #     - backend:
+ #         serviceName: bootsndcpui
+ #         servicePort: 3000
+ #       path: /online/api/
+ #     - backend:
+ #         serviceName: bootsndcpui
+ #         servicePort: 3000
+ #       path: /online/redis/
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/pharmacy
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-prod-ext-ingress
+  namespace: cep-ui
+spec:
+  tls:
+  - hosts:
+    - www.test5.boots.com
+    secretName: www.test5.boots.com
+  rules:
+  - host: www.test5.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootsndcpui
+          servicePort: 3000
+        path: /online/pharmacy
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /online/colleague
+   nginx.ingress.kubernetes.io/enable-rewrite-log: "true"
+   nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+   nginx.ingress.kubernetes.io/add-base-url: "true"
+  name: bootsndcpui-prod-colleague-ingress
+  namespace: cep-ui
+spec:
+  tls:
+  - hosts:
+    - epharmacy.gcp.boots.com
+    secretName: epharmacy.gcp.boots.com
+  rules:
+  - host: epharmacy.gcp.boots.com
+    http:
+      paths:
+      - backend:
+          serviceName: bootscolleaguesui
+          servicePort: 3000
+        path: /online/colleague
