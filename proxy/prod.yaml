@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-proxy-backend
+  namespace: cep-ui
+  labels:
+    app: nginx-proxy
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  selector:
+    app: nginx-proxy
+  type: LoadBalancer
+  ports:
+  - port: 443
+    targetPort: 8080
+status:
+  loadBalancer: {}
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-proxy-config
+  namespace: cep-ui
+  labels:
+    app: nginx-proxy
+data:
+   nginx.conf: |
+    worker_processes  1;
+    error_log  /var/log/nginx/error.log warn;
+    pid        /var/run/nginx.pid;
+    events {
+    worker_connections  1024;
+    }
+    http {
+    default_type  application/octet-stream;
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log  /var/log/nginx/access.log  main;
+    sendfile  on;
+    keepalive_timeout 65;
+    include /etc/nginx/conf.d/*.conf;
+    upstream node {
+      server accreditation.datacash.com:443;
+    }
+        server {
+        listen 8080 ssl;
+        proxy_ssl_name accreditation.datacash.com;
+        proxy_ssl_server_name on;
+        proxy_ssl_verify off;
+        ssl_certificate /tmp/gcp.boots.com;
+        ssl_certificate_key /tmp/gcp.boots.com.key;
+        server_name dhpproxy.gcp.boots.com;
+        location /proxy/ext/payment/transaction  {
+        proxy_pass https://node/Transaction/cnp_a;
+        proxy_http_version 1.1;
+       }
+
+       }
+      }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-cep-ui-proxy
+  namespace: cep-ui
+  labels:
+    app: nginx-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-proxy
+  template:
+    metadata:
+      labels:
+        app: nginx-proxy
+    spec:
+      containers:
+      - name: nginx
+        image: gcpdevacr.azurecr.io/gcp/nginx:v7
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config
+          mountPath: /etc/nginx
+          readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          defaultMode: 0644
+          name: nginx-proxy-config
+      imagePullSecrets:
+      - name: gcpdev01aksacr
