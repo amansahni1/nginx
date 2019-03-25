@@ -47,6 +47,9 @@ data:
     }
         server {
         listen 8080 ssl;
+        proxy_ssl_name accreditation.datacash.com;
+        proxy_ssl_server_name on;
+        proxy_ssl_verify off;
         ssl_certificate /tmp/gcp.boots.com;
         ssl_certificate_key /tmp/gcp.boots.com.key;
         server_name dhpdev01proxy.gcp.boots.com;
@@ -91,4 +94,3 @@ spec:
           name: nginx-proxy-config
       imagePullSecrets:
       - name: gcpdev01aksacr
-
