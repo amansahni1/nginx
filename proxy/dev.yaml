@@ -80,7 +80,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/cep/nginx/nginx-1.15.8-bionic:v1
+        image: gcpdevacr.azurecr.io/gcp/nginx:v7
         ports:
         - containerPort: 8080
         volumeMounts:
