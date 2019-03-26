@@ -49,7 +49,7 @@ data:
         listen 8080 ssl;
         proxy_ssl_name accreditation.datacash.com;
         proxy_ssl_server_name on;
-        proxy_ssl_verify off;        
+        proxy_ssl_verify off;
         ssl_certificate /tmp/gcp.boots.com;
         ssl_certificate_key /tmp/gcp.boots.com.key;
         server_name dhpptproxy.gcp.boots.com;
@@ -80,7 +80,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/gcp/nginx:v7
+        image: gcpdevacr.azurecr.io/gcp/nginx:v8
         ports:
         - containerPort: 8080
         volumeMounts:
