@@ -11,6 +11,7 @@ spec:
   selector:
     app: nginx-proxy
   type: LoadBalancer
+  loadBalancerIP: 10.120.192.160
   ports:
   - port: 443
     targetPort: 8080
@@ -50,7 +51,7 @@ data:
         proxy_ssl_name accreditation.datacash.com;
         proxy_ssl_server_name on;
         proxy_ssl_verify off;
-        ssl_certificate /tmp/gcp.boots.com;
+        ssl_certificate /tmp/gcp.boots.com.cer;
         ssl_certificate_key /tmp/gcp.boots.com.key;
         server_name dhpproxy.gcp.boots.com;
         location /proxy/ext/payment/transaction  {
@@ -80,7 +81,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/gcp/nginx:v7
+        image: gcpprodacr.azurecr.io/gcp/nginx:v9
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -93,4 +94,4 @@ spec:
           defaultMode: 0644
           name: nginx-proxy-config
       imagePullSecrets:
-      - name: gcpdev01aksacr
+      - name: gcpprodaksacr

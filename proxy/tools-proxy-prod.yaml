@@ -101,7 +101,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/gcp/nginx:v7
+        image: gcpprodacr.azurecr.io/gcp/nginx:v7
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -119,4 +119,4 @@ spec:
         secret:
           secretName: nginx-tools-proxy-secrets
       imagePullSecrets:
-      - name: gcpdev01aksacr
+      - name: gcpprodaksacr
