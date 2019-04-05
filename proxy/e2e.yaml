@@ -27,7 +27,6 @@ metadata:
     app: nginx-proxy
 data:
    nginx.conf: |
-    user  dhpappuser;
     worker_processes  1;
     error_log  /var/log/nginx/error.log warn;
     pid        /var/run/nginx.pid;
@@ -36,27 +35,36 @@ data:
     }
     http {
     default_type  application/octet-stream;
+
+    map $request_body $req_body_pwd {
+     "~.*\&password>[^\&]*.+<\/password" '&password>FILTERED</password ';
+    default '';
+    }
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
+                      '"$http_user_agent" "$http_x_forwarded_for" "$req_body_pwd" ';
     access_log  /var/log/nginx/access.log  main;
     sendfile  on;
     keepalive_timeout 65;
     include /etc/nginx/conf.d/*.conf;
     upstream node {
-      server accreditation.datacash.com:443;
+      server accreditation.datacash.com;
     }
         server {
         listen 8080 ssl;
-        proxy_ssl_name accreditation.datacash.com;
+        proxy_ssl_name mars.transaction.datacash.com;
         proxy_ssl_server_name on;
         proxy_ssl_verify off;
-        ssl_certificate /tmp/gcp.boots.com;
+        ssl_certificate /tmp/gcp.boots.com.cer;
         ssl_certificate_key /tmp/gcp.boots.com.key;
+
+        #error_log  /var/log/nginx/proxy_error.log;
+        #access_log /var/log/nginx/proxy_access.log;
         server_name dhpe2eproxy.gcp.boots.com;
         location /proxy/ext/payment/transaction  {
-        proxy_pass https://node/Transaction/cnp_a;
-        proxy_http_version 1.1;
+        #proxy_pass https://node/Transaction;
+        proxy_pass https://accreditation.datacash.com/Transaction/cnp_a;
+        #proxy_http_version 1.1;
        }
 
        }
@@ -81,7 +89,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: gcpdevacr.azurecr.io/gcp/nginx:v7
+        image: gcpdevacr.azurecr.io/gcp/nginx:v9
         ports:
         - containerPort: 8080
         volumeMounts:
