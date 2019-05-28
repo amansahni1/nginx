@@ -1,0 +1,134 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: nginx-tools-proxy-secrets
+  namespace: cep-services-proddevops
+type: Opaque
+data:
+  gcp_boots_com.key:     LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRQy9IdzZ0WitnVWZUVHUKVEVxRmZ2a1B0djN4cmthT2loM2RBSkYxOW5QakdOSWNtbzBXOUl4UkJJbG5zMEdjZURMNHYyTURxSENoREx6UwpveFV4UnVvdkhZSzRNSm8vVkpzMGFiY1l0STVYRU1iSkd6OTd6UHlsZzhJSDhyYk85bHlRRVBKU2VBcGRQd2xaClg5bGVDVU5YNm1GUUVLTmJCSkdPaE5UcVp4dFhEU1pzc3VvZlREaVZQSGVHbVYvaGQ1Y0FaYU4wUzBwa3ZnbXoKVXF5bVdSZE1RdFFqT1lrc0FRVGduNndybGVDU011M2M3N2hXVCt6VnFJSFR1dHFIYzBFQzNYVkF6Wlc3dzRhVgpOeURxQTZVRlkrZWxBMVNtdVM2WVd4T0p2STdKUTBvMmhvZFVxcFpITm55WW8yaG83c1BzaFRubUZEcTJNQjc4CjdkMHdpOUZiQWdNQkFBRUNnZ0VBQ2VDV0JwbzNJVS96TzFtUUJHUXloUUJsRVdkN1dBU0ZWSldoN3VIRXpYakwKNnhTRnRDa0JVM0tUazF0dFNhUGdwb0Jsb3B2QzdsL1ZKbUd0UjdXdGhxL1V3S1lxWXBtQngreXF2TWtnRGhuYwozQ25mVnd1YUJ3ZlBNRS8zNkt4TXpsbEIzTWM5YWVKSEhtcFl0b1p1QjQ0aVoxdmt4V0J3RVZpR0ZITXRzNHJ3Cmo4TEpTZmFrZERqSkdLa0piSjhsYlkwS05iUFk3WEhZMXQ3ajFKUEtPdmg4akNqcUE4VGhzN1VhZklkbGowVjcKdkpGNXkrT3lrckltRjUzM2Z4aDA0TE93T0Z1bHk3QlRLRFV4eld1ODRzTzVnblVKcXY0V2lOZUcxL1JhOXdtaAp4dVp4VHVpTGZGZGNNTzhPS0FBMFFDVFE5VVNwTDVRSzlvUnJ4Tis1WVFLQmdRRGxKNG9nZmQ3QUtCMXBWK2JpCjJkY21SZG0wYmhQUkhjNERWelRZdVo2M040eTVSbU1FUWRicC8wb3lFVkVvTTJrWC9tWWJ0MkFpbHhtcU5HenAKdjZkM1lnY0hqUmIwYWFsK05VQ01XcDd6YTljMEdXNU5oT3o1dkRvRkN1WUtObDAyS0c1Z3Zac1BKTUpEbDZQSQpTZ1k2blllYnMxbUJCbXNjWjgyNVByZ3Fhd0tCZ1FEVmd1SnFmWWZrbUpCQlBpNkRqa1hQL0g3TTRWUHJ3M0NsClZSdVZPeUxyMmlmazJQTEdLcmhrZENHSlplK2JYeFptaUEzdUpiMVhWQXRyVkZKUTE0VllucHBZaVFUWTJVK08KcFZKcHU4dWRZWkpzeVNRWTVFcWVBRlFzc1R5akFRM0dBMWhPRi9EakRXREI4RE5SU0ljRDRNa1VlcmFjQ2ptcgpaSko1M0QrUTBRS0JnRkRzcmJMYndKWkxsRmRuVzNveFEvR1lLVkcycmZqamRhVm9YcGxLcytvd0M5cENLU1dQCnVyM1lFZk9zZWVTZ2d6U2QrcUUvR1F3ZUlFb2pTWE1pNDVrZFhTNGxmVDNETXNBSFBreFNsRitTYmVWUU5jdmEKYlhXa0t6a3NxQ0JqSW5mRnYzVWFnRy9RbzJvTFd5T1lRS3JpaHNsTmhRWXpwZy9aK0tTNnFYOFJBb0dBRHpzRgo4YmpBcitMZUwzbERFaWxjKzRnMGQyTC9mSXIxaHlXNkVQd2w4cE1lVTJuU2I2WnVmdVAxM0hwRURGNU5GOFZPCjBSVXFHNGVvUk9DLytucFZUY3dLa0pROW4wWnBNWEREbnoxQk9oblN1eVhpQ0ZDSXJocXg1bnBDTEJLUUsvYmoKSHJjQWZRSGdUQlZaWTh2N3JhQWtWK3lsQ0I2R25KNVJBSlpnaG5FQ2dZRUFvRVViVU42VklYVmFqTVNudjdLSwpOVkswU2xBYXJ5bHRsWGFOUW8zOG5PRGhoMFRENlNaS25CTk1FeWdhWWRUTmQ2RUhDTHFlb2d0alVacjRhb1pkClhZbjZTR2RvSDZCU2xYaGNoUTFHS0RZY09nS21xTjREUEE5emZmbmZNVnI1VU5QVzlmdlNzY1Y4d1hSeU4vbmQKMUJaTWpmY0pwYTVuRFRoS0JrWGNiZms9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0=
+  gcp_boots_com.cer:     LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUdqakNDQlhhZ0F3SUJBZ0lRQ25EbTZlRzhTdUxRbHNDRE1nNVRJREFOQmdrcWhraUc5dzBCQVFzRkFEQmUKTVFzd0NRWURWUVFHRXdKVlV6RVZNQk1HQTFVRUNoTU1SR2xuYVVObGNuUWdTVzVqTVJrd0Z3WURWUVFMRXhCMwpkM2N1WkdsbmFXTmxjblF1WTI5dE1SMHdHd1lEVlFRREV4UkhaVzlVY25WemRDQlNVMEVnUTBFZ01qQXhPREFlCkZ3MHhPREV4TWpnd01EQXdNREJhRncweU1ERXhNamN4TWpBd01EQmFNSUdETVFzd0NRWURWUVFHRXdKSFFqRVkKTUJZR0ExVUVDQk1QVG05MGRHbHVaMmhoYlhOb2FYSmxNUk13RVFZRFZRUUhFd3BPYjNSMGFXNW5hR0Z0TVI0dwpIQVlEVlFRS0V4VlVhR1VnUW05dmRITWdRMjl0Y0dGdWVTQlFURU14Q3pBSkJnTlZCQXNUQWtsVU1SZ3dGZ1lEClZRUUREQThxTG1kamNDNWliMjkwY3k1amIyMHdnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUsKQW9JQkFRQy9IdzZ0WitnVWZUVHVURXFGZnZrUHR2M3hya2FPaWgzZEFKRjE5blBqR05JY21vMFc5SXhSQklsbgpzMEdjZURMNHYyTURxSENoREx6U294VXhSdW92SFlLNE1Kby9WSnMwYWJjWXRJNVhFTWJKR3o5N3pQeWxnOElICjhyYk85bHlRRVBKU2VBcGRQd2xaWDlsZUNVTlg2bUZRRUtOYkJKR09oTlRxWnh0WERTWnNzdW9mVERpVlBIZUcKbVYvaGQ1Y0FaYU4wUzBwa3ZnbXpVcXltV1JkTVF0UWpPWWtzQVFUZ242d3JsZUNTTXUzYzc3aFdUK3pWcUlIVAp1dHFIYzBFQzNYVkF6Wlc3dzRhVk55RHFBNlVGWStlbEExU211UzZZV3hPSnZJN0pRMG8yaG9kVXFwWkhObnlZCm8yaG83c1BzaFRubUZEcTJNQjc4N2Qwd2k5RmJBZ01CQUFHamdnTWdNSUlESERBZkJnTlZIU01FR0RBV2dCU1EKV1Ard25IV29VVlIzc2UzeW8wTVdPSjVzeFRBZEJnTlZIUTRFRmdRVVQ5Q0JUcjhFejExc1VZNFpBbWN5V041NgpFYmt3R2dZRFZSMFJCQk13RVlJUEtpNW5ZM0F1WW05dmRITXVZMjl0TUE0R0ExVWREd0VCL3dRRUF3SUZvREFkCkJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUlLd1lCQlFVSEF3SXdQZ1lEVlIwZkJEY3dOVEF6b0RHZ0w0WXQKYUhSMGNEb3ZMMk5rY0M1blpXOTBjblZ6ZEM1amIyMHZSMlZ2VkhKMWMzUlNVMEZEUVRJd01UZ3VZM0pzTUV3RwpBMVVkSUFSRk1FTXdOd1lKWUlaSUFZYjliQUVCTUNvd0tBWUlLd1lCQlFVSEFnRVdIR2gwZEhCek9pOHZkM2QzCkxtUnBaMmxqWlhKMExtTnZiUzlEVUZNd0NBWUdaNEVNQVFJQ01IVUdDQ3NHQVFVRkJ3RUJCR2t3WnpBbUJnZ3IKQmdFRkJRY3dBWVlhYUhSMGNEb3ZMM04wWVhSMWN5NW5aVzkwY25WemRDNWpiMjB3UFFZSUt3WUJCUVVITUFLRwpNV2gwZEhBNkx5OWpZV05sY25SekxtZGxiM1J5ZFhOMExtTnZiUzlIWlc5VWNuVnpkRkpUUVVOQk1qQXhPQzVqCmNuUXdDUVlEVlIwVEJBSXdBRENDQVgwR0Npc0dBUVFCMW5rQ0JBSUVnZ0Z0QklJQmFRRm5BSFlBdTluZnZCK0sKY2JXVGxDT1hxcEo3UnpoWGxRcXJVdWdha0paa05vNGUwWVVBQUFGbld3WnR3d0FBQkFNQVJ6QkZBaUVBclB4UwpuY2ZycGNmQkNCVVp2bldLaEZaQnJJangxTlU1eVNSMXlRcWdKaWNDSUY2aWxSaCtJNHVOcm5YRnFONnFzUGZ2Cnc0TnBVVmJlelYxV3ZzM1JDLzJCQUhVQWgzVy81MWw4K0l4RG1WKzk4MjcvVm8xSFZqYi9TclZnd2JUcS8xNmcKZ3c4QUFBRm5Xd1p1aVFBQUJBTUFSakJFQWlCeU9XaEI4dkJmaG11TmFpMHhZd252NGJOdHdzdCtxcHlMOGl3YQpJVWZWV3dJZ2IrU1ROQzRUTytYM3VqS1dnelY1SEozOXk4QndTeFBPTVVOYlg4MUZ0ZmdBZGdCdlUzYXNNZkF4CkdkaVpBS1JSRmY5M0ZSd1IyUUxCQUNrR2piSUltamZaRXdBQUFXZGJCbThwQUFBRUF3QkhNRVVDSUhlTis1YUkKR0J2Y2RFOXpoNGVGOWxMalpKUTE3ZTMxd0pKY0ViL0hPODl3QWlFQXNoUnBxOUFUUTNWNGl1MXRBOEtlMk1DbApUalY5WlVYM2phVFo2QjdDSWVjd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFHdmJoWWpwV1dkSHpBVWJRUENoClU5WW1jNEhpS0FyU1RUdGVSQ29wZCtzTzFGbVlUV04zVEY3UHcwMWgyZ3p2NThZM2o3OE1vZ2VMK0lqYnl3VHYKTVMyUGVvTUlyVWlyL3JZYWpTNWI2ZGNEWjcxbFErSS8rMzBNU3A3VWlaaWxNbzJrNUlZb1d1MFk5STY0S2p1QwpUQmgwSUgrd2JFZFA5bS9Xd3JNTyttN1VZbnBUcFhaSkloK1dLUnFQRXViaFhOb0V2TGZ6dVJQa3lhb2RtTGlSCjRCSXpBVEI1NGF3eFg3R1NCdWE3blR5Z0FEWGxhaUJYU1NsVEVtREJJeDJjV1hRRlBjbXFRT2hJcGV2RnVlVkkKSjcxdkJzQWJPOS9mYjduRGtoSGFycTcrU0tHbTVPWTlsTllpSm11WUc2UC9RT25EZ2Exbi8rallSOFAzTlZWbQorblU9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0=
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-tools-proxy-svc
+  namespace: cep-services-proddevops
+  labels:
+    app: nginx-tools-proxy
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  selector:
+    app: nginx-tools-proxy
+  type: LoadBalancer
+  ports:
+  - port: 443
+    targetPort: 8443
+status:
+  loadBalancer: {}
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-tools-proxy-config
+  namespace: cep-services-proddevops
+  labels:
+    app: nginx-tools-proxy
+data:
+   nginx.conf: |
+    worker_processes  1;
+    error_log  /var/log/nginx/error.log warn;
+    pid        /var/run/nginx.pid;
+    events {
+    worker_connections  1024;
+    }
+    http {
+    default_type  application/octet-stream;
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log  /var/log/nginx/access.log  main;
+    sendfile  on;
+    keepalive_timeout 65;
+    include /etc/nginx/conf.d/*.conf;
+    upstream kibana {
+      server kibana.cep-monitoring-prod.svc.cluster.local:443;
+    }
+    upstream jenkins {
+      server jenkins.jenkins.svc.cluster.local:8080;
+    }
+        server {
+        listen 8443 ssl;
+        ssl_certificate /tmp/gcp_boots_com.cer;
+        ssl_certificate_key /tmp/gcp_boots_com.key;
+        server_name kibana.gcp.boots.com;
+        access_log /var/log/nginx/kibana.log main;
+        location /  {
+        proxy_pass https://10.120.200.4/;
+        proxy_http_version 1.1;
+       }
+       }
+        server {
+        listen 8443 ssl;
+        ssl_certificate /tmp/gcp_boots_com.cer;
+        ssl_certificate_key /tmp/gcp_boots_com.key;
+        server_name jenkins.gcp.boots.com;
+        access_log /var/log/nginx/jenkins.log main;
+        location /  {
+        proxy_pass http://gcpjenkins.gcp.boots.com:8080;
+        proxy_http_version 1.1;
+       }
+     }
+        server {
+        listen 8443 ssl;
+        ssl_certificate /tmp/gcp_boots_com.cer;
+        ssl_certificate_key /tmp/gcp_boots_com.key;
+        server_name spinnaker.gcp.boots.com;
+        access_log /var/log/nginx/spinnaker.log main;
+        location /  {
+        proxy_pass https://spinnakerdeck.tools.boots.com:9000;
+        proxy_http_version 1.1;
+       }
+     }
+      }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-tools-proxy
+  namespace: cep-services-proddevops
+  labels:
+    app: nginx-tools-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-tools-proxy
+  template:
+    metadata:
+      labels:
+        app: nginx-tools-proxy
+    spec:
+      containers:
+      - name: nginx
+        image: MyDockerHubURL/nginx:v7
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config
+          mountPath: /etc/nginx
+          readOnly: true
+        - name: certificates-key
+          mountPath: /tmp
+      volumes:
+      - name: config
+        configMap:
+          defaultMode: 0644
+          name: nginx-tools-proxy-config
+      - name: certificates-key
+        secret:
+          secretName: nginx-tools-proxy-secrets
+      imagePullSecrets:
+      - name: NGINXsecrets
+
